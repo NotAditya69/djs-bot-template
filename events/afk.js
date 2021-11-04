@@ -1,9 +1,9 @@
-const db = require('../models/afk');// hamne ek hi database banaya for slash and normal so haam isi model ko import marenge 
-const moment = require('moment');// moment is a important thing when using that requires time abhi tu kuch bhi time related karega na then you can use moment or parse-ms
+const db = require('../models/afk');
+
 const { MessageEmbed } = require('discord.js');
 const client = require('../index')
 
-client.on('messageCreate', async(message) => { //ye database se trigger hoga
+client.on('messageCreate', async(message) => {
   if(message.author.bot) return;
   db.findOne({ Guild: message.guild.id, Member: message.author.id }, async(err, data) => {// abhi ye wapas aya to haam abhi iska server id and user id dhundenge
     if(err) throw err; //then isse error ke hisab se log karenge bcuz hamne async ke baad err and data dala simple bhasa mai bolu to ye error hai and isse haam atche kam ke liye use karenge
@@ -35,4 +35,3 @@ data.delete() // then ye mongodb se data uda dega you can check user id and guil
       } else return; // and bss 
     })
   }
-})
