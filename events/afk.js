@@ -34,4 +34,4 @@ data.delete()
         message.channel.send({ embeds: [afk]})
       } else return; 
     })
-  }
+  }}
