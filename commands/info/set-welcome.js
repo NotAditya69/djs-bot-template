@@ -3,7 +3,7 @@ const { Client, Message, MessageEmbed } = require('discord.js')
 
 module.exports = {
     name: "set-welcome",
-    aliases: ["setWelcome"]
+    aliases: ["setWelcome"],
     description: "Sets welcome channel and welcomes new users to the server",
     /** 
      * @param {Client} client 
